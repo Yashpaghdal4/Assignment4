@@ -17,3 +17,7 @@ app.get("/",(req,res)=>{
     res.render("pages/order");
 
 })
+
+app.listen(port,()=>{
+    console.log(`server runs on ${port}`);
+});
