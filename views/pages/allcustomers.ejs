@@ -1,0 +1,51 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>All order</h1>
+
+        <p><a class="link-primary" role="button" href="/">New customer</a></p>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Delivary Address</th>
+                <th>Productonequantity</th>
+                <th>ProductTwoquantity</th>
+                <th>ProductThreequantity</th>
+                <th>ProductTotal</th>
+                <th>Shipping Charge</th>
+                <th>TaxAmount</th>
+                <th>Total</th>
+                
+            </thead>
+            <tbody>
+                <% for (let Customer of Customers) { %>
+                    <tr>
+                        <td><%= Customer.fullName %></td>
+                        <td><%= Customer.Email %></td>
+                        <td><%= Customer.contactNumber %></td>
+                        <td>
+                            <%= Customer.Address %><br>
+                            <%= Customer.City %><br>
+                            <%= Customer.Province %>, <%= Customer.postCode %>
+                        </td>
+                        <td><%= Customer.productOneQuantity  %></td>
+                        <td><%= Customer.productTwoQuantity %></td>
+                        <td><%= Customer.productThreeQuantity %></td>
+                        <td>$<%= Customer.ProductTotal %></td>
+                        <td>$<%= Customer.shippingCharge %></td>
+                        <td>$<%= Customer.taxAmount %></td>
+                        <td>$<%= Customer.Total %></td>
+                    </tr>
+                    <% } %>
+            </tbody>
+
+        </table>
+        <%- include("../shared/footer") %>
+
+    </div>
+    <%- include("../shared/script") %>
+</body>

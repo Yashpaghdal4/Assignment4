@@ -1,0 +1,74 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>MY SHOP'S INVOICE</h1>
+        <p><a class="link-primary" role="button" href="/customers">All customers</a></p>
+
+        <table class="table table-hover table-bordered">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td><%=name %></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><%=email %></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><%=phone %></td>
+                </tr>
+                <tr>
+                    <td>Delivary Address</td>
+                    <td><%= address %>, <br> <%= city %>, <br> <%= province %> ,<%= postCode %></td>
+                </tr>
+                <% if (productOneQuantity>0) { %>
+                    <tr>
+                        <td><%= productOneQuantity %> Product1 @ $5</td>
+                        <td>$<%= productOneValue %> </td>
+                    </tr>
+                 
+                <% } %>
+
+                <% if (productTwoQuantity>0) { %>
+                    <tr>
+                        <td><%= productTwoQuantity %> Product2 @ $20</td>
+                        <td>$<%= productTwoValue %> </td>
+                    </tr>
+                 
+                <% } %>
+                <% if (productThreeQuantity>0) { %>
+                    <tr>
+                        <td><%= productThreeQuantity %> Product3 @ $30</td>
+                        <td>$<%= productThreeValue %> </td>
+                    </tr>
+                 
+                <% } %>
+                
+                <tr>
+                    <td>Shipping Charge</td>
+                    <td>$<%= shippingCharge %></td>
+                </tr>
+                <tr>
+                    <td>Sub Total</td>
+                    <td>$<%= subTotal %></td>
+                </tr>
+                <tr>
+                    <td>Taxes</td>
+                    <td>$<%= taxAmount %></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$<%= total %></td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+        <%- include("../shared/footer") %>
+    </div>
+    <%- include("../shared/script") %>
+   
+</body>
